@@ -1,0 +1,152 @@
+{
+    "anggur": {
+        "calories": 69,
+        "protein": 0.72,
+        "fat": 0.16,
+        "carbohydrates": 18.1
+    },
+    "apel": {
+        "calories": 52,
+        "protein": 0.26,
+        "fat": 0.17,
+        "carbohydrates": 13.81
+    },
+    "ayam": {
+        "calories": 239,
+        "protein": 27,
+        "fat": 14,
+        "carbohydrates": 0
+    },
+    "bakso": {
+        "calories": 150,
+        "protein": 9,
+        "fat": 10,
+        "carbohydrates": 7
+    },
+    "bakwan": {
+        "calories": 197,
+        "protein": 5,
+        "fat": 13,
+        "carbohydrates": 15
+    },
+    "bubur": {
+        "calories": 70,
+        "protein": 1.5,
+        "fat": 0.3,
+        "carbohydrates": 15
+    },
+    "burger": {
+        "calories": 295,
+        "protein": 17,
+        "fat": 12,
+        "carbohydrates": 29
+    },
+    "capcay": {
+        "calories": 100,
+        "protein": 5,
+        "fat": 5,
+        "carbohydrates": 10
+    },
+    "cumi": {
+        "calories": 92,
+        "protein": 15.6,
+        "fat": 1.38,
+        "carbohydrates": 3.08
+    },
+    "durian": {
+        "calories": 147,
+        "protein": 1.5,
+        "fat": 5.33,
+        "carbohydrates": 27.09
+    },
+    "es krim": {
+        "calories": 207,
+        "protein": 3.5,
+        "fat": 11,
+        "carbohydrates": 24
+    },
+    "gudeg": {
+        "calories": 200,
+        "protein": 5,
+        "fat": 8,
+        "carbohydrates": 28
+    },
+    "ikan goreng": {
+        "calories": 240,
+        "protein": 23,
+        "fat": 14,
+        "carbohydrates": 5
+    },
+    "jeruk": {
+        "calories": 47,
+        "protein": 0.94,
+        "fat": 0.12,
+        "carbohydrates": 11.75
+    },
+    "kacang": {
+        "calories": 567,
+        "protein": 25.8,
+        "fat": 49.24,
+        "carbohydrates": 16.13
+    },
+    "kentang": {
+        "calories": 77,
+        "protein": 2,
+        "fat": 0.1,
+        "carbohydrates": 17.58
+    },
+    "kerupuk": {
+        "calories": 250,
+        "protein": 2,
+        "fat": 10,
+        "carbohydrates": 37
+    },
+    "kopi": {
+        "calories": 2,
+        "protein": 0.1,
+        "fat": 0,
+        "carbohydrates": 0.1
+    },
+    "lele goreng": {
+        "calories": 240,
+        "protein": 26,
+        "fat": 14,
+        "carbohydrates": 4
+    },
+    "pempek": {
+        "calories": 188,
+        "protein": 7,
+        "fat": 7,
+        "carbohydrates": 23
+    },
+    "sate": {
+        "calories": 200,
+        "protein": 15,
+        "fat": 10,
+        "carbohydrates": 10
+    },
+    "singkong goreng": {
+        "calories": 191,
+        "protein": 1.4,
+        "fat": 7.9,
+        "carbohydrates": 28.6
+    },
+    "soto": {
+        "calories": 150,
+        "protein": 6,
+        "fat": 8,
+        "carbohydrates": 10
+    },
+    "telur dadar": {
+        "calories": 140,
+        "protein": 6,
+        "fat": 10,
+        "carbohydrates": 5
+    },
+    "tempe goreng": {
+        "calories": 190,
+        "protein": 11,
+        "fat": 10,
+        "carbohydrates": 10
+    }
+}
