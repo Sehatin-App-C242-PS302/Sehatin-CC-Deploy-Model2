@@ -3,3 +3,7 @@ uvicorn
 tensorflow==2.18.0
 pillow
 python-multipart
+mysql-connector-python  # Untuk koneksi ke MySQL Aiven
+google-cloud-storage  # Untuk integrasi dengan Google Cloud Storage
+python-dotenv
+python-jose  # Untuk penanganan JWT

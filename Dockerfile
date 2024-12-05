@@ -1,21 +1,25 @@
-FROM python:3.11-slim
+FROM python:3.9-slim
 
-# Install library sistem yang diperlukan
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libhdf5-dev \
-    python3-dev \
-    pkg-config \
-    && apt-get clean
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set direktori kerja
+# Set work directory
 WORKDIR /app
 
-# Salin semua file proyek ke container
+# Copy dependencies
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
 COPY . .
 
-# Install dependensi Python
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+# Expose port
+EXPOSE 8080
 
-# Jalankan aplikasi
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Run the application
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
