@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends, status
 from fastapi.security import OAuth2PasswordBearer
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.models import load_model # type: ignore
+from tensorflow.keras.preprocessing.image import img_to_array # type: ignore
 from PIL import Image
 from google.cloud import storage
 import mysql.connector
@@ -11,8 +11,8 @@ import json
 import os
 import uuid
 from datetime import datetime
-from jose import jwt, JWTError
-from dotenv import load_dotenv
+from jose import jwt, JWTError # type: ignore
+from dotenv import load_dotenv # type: ignore
 import logging
 
 # Setup Logging
@@ -139,16 +139,17 @@ async def predict_image(
         # Upload the image to Google Cloud Storage
         gcs_url = upload_to_gcs(temp_file_path, f"uploads/{uuid.uuid4().hex}.jpg")
 
-        # Save data to MySQL
+                # Save data to MySQL
         connection = get_db_connection()
         cursor = connection.cursor()
         query = """
-            INSERT INTO nutritions (user_id, image_url, calories, protein, fat, carbohydrates, created_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO nutritions (user_id, image_url, predicted_class, calories, protein, fat, carbohydrates, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         """
         cursor.execute(query, (
             user_id,
             gcs_url,
+            predicted_class,  # Save predicted_class
             nutrition_info["calories"],
             nutrition_info["protein"],
             nutrition_info["fat"],
@@ -158,6 +159,7 @@ async def predict_image(
         connection.commit()
         cursor.close()
         connection.close()
+
 
         # Delete the temporary file
         os.remove(temp_file_path)
@@ -171,11 +173,12 @@ async def predict_image(
             os.remove(temp_file_path)
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/predict/image/")
 async def get_predictions(token_payload: dict = Depends(verify_jwt_token)):
     user_id = token_payload["user_id"]  # Extract user_id from JWT payload
     try:
-        # Fetch data from MySQL
+                # Fetch data from MySQL
         connection = get_db_connection()
         cursor = connection.cursor(dictionary=True)
         query = "SELECT * FROM nutritions WHERE user_id = %s ORDER BY created_at DESC"
